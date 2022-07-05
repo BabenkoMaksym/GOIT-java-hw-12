@@ -15,10 +15,6 @@ public class FIzzBuzz {
     }
 
     public void run(int lastNumber) {
-        Thread a =new Thread(new PrintFizz());
-        Thread b =new Thread(new PrintBuzz());
-        Thread c =new Thread(new PrintFizzBuzz());
-        Thread d =new Thread(new PrintNumber());
 
         ExecutorService service = Executors.newCachedThreadPool();
 
@@ -39,5 +35,7 @@ public class FIzzBuzz {
             }
             number++;
         }
+
+        service.shutdown();
     }
 }
